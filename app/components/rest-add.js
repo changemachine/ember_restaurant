@@ -4,8 +4,8 @@ export default Ember.Component.extend({
   restFormShow: false,
 
   actions:{
-    showRestoForm(){
-      this.set('restFormShow', true);
+    toggleRestoForm(){
+      this.set('restFormShow', !this.get('restFormShow'));
     },
 
     // checkDupe(){
@@ -21,7 +21,7 @@ export default Ember.Component.extend({
         img:     this.get('img'),
         reviews: []
       };
-      this.set('showRestoForm', false);
+      this.set('restFormShow', false);
       this.sendAction('submitResto', newResto);
       console.log('submitResto: '+ newResto);
     }
