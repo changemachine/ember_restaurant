@@ -1,0 +1,30 @@
+{{yield}}
+
+{{#if restFormShow}}
+
+  <h1>Add Restaurant</h1>
+  <div><form>
+    <div class="form-group">
+      {{input value=name
+              placeholder="Name"
+              name="name" id="name"}}
+      {{input value=address
+              placeholder="Address"
+              name="address" id="address"}}
+      {{input value=cuisine
+              placeholder="Cuisine Type"
+              name="cuisine" id="cuisine"}}
+      {{input value=fast
+              placeholder="Fast Food?"
+              name="fast" id="fast"}}
+      {{input value=img
+              placeholder="Image URL"
+              name="img" id="img"}}
+    </div>
+    <button {{action 'submitResto'}}>Save</button>
+  </form>
+  </div>
+
+{{else}}
+    <button {{action 'showRestoForm'}}>Add Restaurant</button>
+{{/if}}
