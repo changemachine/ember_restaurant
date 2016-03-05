@@ -1,0 +1,14 @@
+{{outlet}}
+
+<h4 class="well">ADMIN</h4>
+
+{{#each model as |r|}}
+  {{rest-tile
+      resto=r
+      dropResto="destroyResto"
+      editResto="updateResto"
+      submitReview="saveReview"
+  }}
+{{/each}}
+
+{{rest-add model=model submitResto="saveResto"}}

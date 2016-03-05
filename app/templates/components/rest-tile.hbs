@@ -1,4 +1,43 @@
 {{yield}}
-<button {{action 'dropResto' restaurant}}>X</button>
 
-<h4>{{restaurant.name}}</h4>
+<div class="well">
+  <h4>{{resto.name}}</h4>
+  <h6>{{resto.address}}</h6>
+
+
+  {{#if admin}}
+    {{#if editing}}
+      <h1>Edit Restaurant</h1>
+      <form>
+        <div class="form-group">
+          {{input value=name placeholder="Update Name" name="name" id="name"}}
+          {{input value=address placeholder="Update Address" name="address" id="address"}}
+          {{input value=cuisine placeholder="Update Cuisine Type" name="cuisine" id="cuisine"}}
+          {{input value=fast placeholder="Update Fast Food?" name="fast" id="fast"}}
+          {{input value=img placeholder="Update Image URL" name="img" id="img"}}
+        </div>
+        <button {{ action 'editResto' resto }}>Save</button>
+        <button {{ action 'dropResto' resto }}>Delete</button>
+        <button {{ action 'toggleEditing' }}>Nevermind</button>
+      </form>
+    {{else}}
+      <button {{ action 'toggleEditing' }}>Edit</button>
+    {{/if}}
+  {{/if}}
+
+  {{#if reviewing}}
+    <form>
+      <div class="form-group">
+        {{input value=username placeholder="User Name" name="username" id="username"}}
+        {{input value=name placeholder="Review Title" name="reviewTtl" id="reviewTtl"}}
+        {{textfield value=review placeholder="Review" name="review" id="review"}}
+        </div>
+      <button {{ action 'submitReview' resto }}>Submit Review</button>
+      <button {{ action 'toggleReviewing' }}>Nevermind</button>
+    </form>
+  {{else}}
+    <button {{ action 'toggleReviewing' }}>Review</button>
+  {{/if}}
+
+
+</div>

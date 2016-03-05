@@ -5,7 +5,7 @@
  --}}
 
 {{#each model as |r|}}
-  {{rest-tile restaurant=r dropResto="destroyResto"}}
+  {{rest-tile resto=r dropResto="destroyResto"}}
 {{/each}}
 
 {{rest-add model=model submitResto="saveResto"}}
