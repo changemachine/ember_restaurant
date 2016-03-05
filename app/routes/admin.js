@@ -17,7 +17,6 @@ export default Ember.Route.extend({
     },
     destroyResto(resto){
       resto.destroyRecord();
-      console.log('DESTROY: '+ resto);
       this.transitionTo('index');
     }
   }

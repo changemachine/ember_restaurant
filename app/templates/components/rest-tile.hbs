@@ -29,14 +29,21 @@
     <form>
       <div class="form-group">
         {{input value=username placeholder="User Name" name="username" id="username"}}
-        {{input value=name placeholder="Review Title" name="reviewTtl" id="reviewTtl"}}
-        {{textfield value=review placeholder="Review" name="review" id="review"}}
+        {{input value=reviewTtl placeholder="Review Title" name="reviewTtl" id="reviewTtl"}}
+        {{textarea value=review placeholder="Review" name="review" id="review"}}
         </div>
       <button {{ action 'submitReview' resto }}>Submit Review</button>
       <button {{ action 'toggleReviewing' }}>Nevermind</button>
     </form>
+
   {{else}}
     <button {{ action 'toggleReviewing' }}>Review</button>
+
+    {{#each model as |i|}}
+      {{log i}}
+      {{!-- <p>rev.review</p> --}}
+    {{/each}}
+
   {{/if}}
 
 

@@ -5,15 +5,14 @@ export default Ember.Route.extend({
     return this.store.findAll('restaurant') || null;
   },
   actions:{
-    saveResto(submission){
-      var newResto = this.store.createRecord('restaurant', submission);
+    saveResto(restaurant){
+      var newResto = this.store.createRecord('restaurant', restaurant);
       newResto.save();
-      console.log('SAVERESTO: '+ newResto);
       this.transitionTo('index');
     },
-    destroyResto(resto){
-      resto.destroyRecord();
-      console.log('DESTROY: '+ resto);
+    saveReview(review){
+      var newReview = this.store.createRecord('review', review);
+      newReview.save();
       this.transitionTo('index');
     }
 

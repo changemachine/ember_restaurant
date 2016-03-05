@@ -5,7 +5,7 @@
  --}}
 
 {{#each model as |r|}}
-  {{rest-tile resto=r dropResto="destroyResto"}}
+  {{rest-tile resto=r model=model submitReview="saveReview"}}
 {{/each}}
 
 {{rest-add model=model submitResto="saveResto"}}

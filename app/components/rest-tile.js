@@ -38,15 +38,12 @@ export default Ember.Component.extend({
 
     toggleReviewing(){
       this.set('reviewing', !this.get('reviewing'));
-      console.log('reviewing: ' + this.get('reviewing'));
     },
 
     submitReview(restaurant){
       var newReview = {
         restaurant: restaurant,
         username:   this.get('username'),
-        auth_rep:   3,
-        rating:     4,
         reviewTtl:  this.get('reviewTtl'),
         review:     this.get('review'),
         timestamp:  Date.now()
